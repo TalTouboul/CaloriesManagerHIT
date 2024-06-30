@@ -1,10 +1,3 @@
-
-/*
-Codeowners:
-Orr Goren - 205816341
-Tal Tubul - 208835355
-*/
-
 console.log("inside www.js");
 
 /**
@@ -21,7 +14,7 @@ var http = require('http');
  */
 
 var port = normalizePort(process.env.PORT || 10000);
-app.set('port', port);
+app.set('port', 10000);
 
 /**
  * Create HTTP server.
@@ -33,9 +26,9 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-//server.listen(port);
+server.listen(port);
 server.on('error', onError);
-//server.on('listening', onListening);
+server.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.
@@ -89,19 +82,11 @@ function onError(error) {
  * Event listener for HTTP server "listening" event.
  */
 
-/* function onListening() {
+function onListening() {
   console.log("listening");
   var addr = server.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
-  console.log(`Server is listening on port ${port}`);
-} */
-
-console.log("Starting server...");
-
-// Listen on provided port, on all network interfaces.
-server.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
-});
+}
