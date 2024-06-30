@@ -3,7 +3,9 @@ Codeowners:
 Orr Goren - 205816341
 Tal Tubul - 208835355
 */
+const express = require('express'); // Importing the Express framework
 const router = express.Router(); // Creating an instance of an Express router
+const { readDevelopersFile } = require("../controllers/about"); // Importing the function to read the developers file
 
 // Route to return all data regarding the developers of this project
 router.get("/", async (req, res) => {
