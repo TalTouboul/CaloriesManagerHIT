@@ -13,7 +13,8 @@ const path = require('path'); // Path module to handle and transform file paths
 const cookieParser = require('cookie-parser'); // Middleware to parse cookies
 const logger = require('morgan'); // HTTP request logger middleware
 const fs = require('fs'); // File system module to handle file operations
-
+process.env.MONGODB_URI = "mongodb+srv://tal:tubul1497@caloriesdb.jpv63m1.mongodb.net/?retryWrites=true&w=majority&appName=caloriesDB";
+const uri = process.env.MONGODB_URI;
 // Importing route handlers
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -25,7 +26,7 @@ const aboutRouter = require('./routes/about');
 const app = express();
 
 // MongoDB connection using mongoose
-mongoose.connect("mongodb+srv://tal:tubul1497@caloriesdb.jpv63m1.mongodb.net/?retryWrites=true&w=majority&appName=caloriesDB")
+mongoose.connect(uri)
     .then(async () => {
       console.log("Connected To DB Successfully....");
     })
