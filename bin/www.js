@@ -13,7 +13,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || https://dashboard.render.com/);
+var port = normalizePort(process.env.PORT || 'https://dashboard.render.com/');
 app.set('port', port);
 
 /**
